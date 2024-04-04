@@ -1,4 +1,4 @@
-# Secure Short ID Generator
+# Secure Short ID Generator [![shortid](https://img.shields.io/npm/dm/secure-short-id.svg)](https://www.npmjs.org/package/secure-short-id)
 
 Secure Short ID Generator is a Node.js module that provides a secure and efficient way to generate short IDs, suitable for various use cases such as unique identifiers in databases, session IDs, URL shorteners, etc.
 
