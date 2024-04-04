@@ -23,13 +23,13 @@ npm install secure-short-id
 ```javascript
 const generateShortId = require('secure-short-id');
 
-// Generate a short ID with default length (12 characters)
+// Generate a short ID with default length (8 characters)
 const shortId = generateShortId();
-console.log(shortId); // Example output: "oAQbi2Bt0Xz_"
+console.log(shortId);
 
-// Generate a short ID with custom length (e.g., 8 characters)
-const customLengthShortId = generateShortId(8);
-console.log(customLengthShortId); // Example output: "zR9tM-vW"
+// Generate a short ID with custom length (e.g., 12 characters)
+const customLengthShortId = generateShortId(12);
+console.log(customLengthShortId);
 ```
 
 ## API
@@ -44,4 +44,4 @@ Returns: A string representing the generated short ID.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [ISC License](LICENSE).

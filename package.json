@@ -1,8 +1,9 @@
 {
   "name": "secure-short-id",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "The generateShortId function is a Node.js module that generates random short IDs of customizable length. Utilizing the built-in crypto module, it produces secure short IDs comprised of a combination of lowercase letters, uppercase letters, and digits. Users can specify the desired length of the short ID as an optional parameter when calling the function. The generated short IDs are suitable for various use cases such as unique identifiers, session tokens, or temporary access keys.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest test/shortid.test.js"
   },
@@ -14,7 +15,14 @@
   ],
   "author": "Rohit Yadav",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rohitnirban/secure-short-id.git"
+  },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.7"
   }
 }
