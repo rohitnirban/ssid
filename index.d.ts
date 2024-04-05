@@ -1,3 +1,3 @@
-declare module 'secure-short-id' {
+declare module 'ssid' {
     export default function generateShortId(length?: number): string;
 }

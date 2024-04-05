@@ -1,6 +1,6 @@
-# Secure Short ID Generator [![shortid](https://img.shields.io/npm/dm/secure-short-id.svg)](https://www.npmjs.org/package/secure-short-id)
+# SSID(Secure Short ID) Generator [![shortid](https://img.shields.io/npm/dm/secure-short-id.svg)](https://www.npmjs.org/package/secure-short-id)
 
-Secure Short ID Generator is a Node.js module that provides a secure and efficient way to generate short IDs, suitable for various use cases such as unique identifiers in databases, session IDs, URL shorteners, etc.
+SSID Generator is a Node.js module that provides a secure and efficient way to generate short IDs, suitable for various use cases such as unique identifiers in databases, session IDs, URL shorteners, etc.
 
 ## Features
 
@@ -15,13 +15,13 @@ Secure Short ID Generator is a Node.js module that provides a secure and efficie
 You can install the Secure Short ID Generator module via npm:
 
 ```bash
-npm install secure-short-id
+npm install ssid
 ```
 
 ## Usage
 
 ```javascript
-const generateShortId = require('secure-short-id');
+const generateShortId = require('ssid');
 
 // Generate a short ID with default length (8 characters)
 const shortId = generateShortId();

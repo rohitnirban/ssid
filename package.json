@@ -1,13 +1,14 @@
 {
-  "name": "secure-short-id",
-  "version": "1.0.6",
-  "description": "Generate secure and unique short IDs in JavaScript, tested  for reliability and compatibility with browsers",
+  "name": "ssid",
+  "version": "0.0.1",
+  "description": "Generate secure and unique short IDs in JavaScript, tested for reliability and compatibility with browsers",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "test": "jest test/shortid.test.js"
   },
   "keywords": [
+    "ssid",
     "short",
     "shortid",
     "secure",
@@ -17,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/rohitnirban/secure-short-id.git"
+    "url": "git://github.com/rohitnirban/ssid.git"
   },
   "devDependencies": {
     "jest": "^29.7.0"
