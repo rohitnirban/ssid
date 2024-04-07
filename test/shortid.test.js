@@ -2,7 +2,7 @@
 
 const generateShortId = require('../lib/index');
 
-const numberOfIdToGenerate = 10000000;
+const numberOfIdToGenerate = 10000;
 
 describe('generateShortId function', () => {
     test('generates a short ID with default length', () => {
@@ -14,6 +14,16 @@ describe('generateShortId function', () => {
         const shortId = generateShortId(15);
         expect(shortId.length).toBe(15);
     });
+    
+    test('Gives an error of min length', () => {
+        expect(() => generateShortId(2)).toThrow("Minimum Length of short id can not be less than 4");
+    });
+    
+
+    test('Gives an error of min length', () => {
+        expect(() => generateShortId(1000000)).toThrow("Maximum Length of short id can not be more than 10000");
+    });
+    
 
     test('generates a unique short ID each time', () => {
         const shortIds = new Set();
