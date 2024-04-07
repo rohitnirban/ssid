@@ -38,7 +38,7 @@ console.log(customLengthShortId);
 
 Generates a short ID with the specified length. If no length is provided, the default length is 8 characters.
 
-- `length` (optional): The length of the generated short ID (default is 8 characters).
+- `length` (optional): The length of the generated short ID (default is 8 characters). Minimum length is 4 characters and maximum length is 10,000 characters.
 
 Returns: A string representing the generated short ID.
 
