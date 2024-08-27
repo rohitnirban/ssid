@@ -1,6 +1,6 @@
 {
   "name": "ssid",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Generate secure and unique short IDs in JavaScript, tested for reliability and compatibility with browsers",
   "main": "index.js",
   "types": "index.d.ts",
