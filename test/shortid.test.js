@@ -2,7 +2,7 @@
 
 const generateShortId = require('../lib/index');
 
-const numberOfIdToGenerate = 10000;
+const numberOfIdToGenerate = 10000000;
 
 describe('generateShortId function', () => {
     test('generates a short ID with default length', () => {
@@ -21,7 +21,7 @@ describe('generateShortId function', () => {
     
 
     test('Gives an error of min length', () => {
-        expect(() => generateShortId(1000000)).toThrow("Maximum Length of short id can not be more than 10000");
+        expect(() => generateShortId(100)).toThrow("Maximum Length of short id can not be more than 100");
     });
     
 
@@ -60,6 +60,6 @@ describe('generateShortId function', () => {
         const averageRepetitionRate = totalRepetitions / numberOfIdsToGenerate;
         console.log(`Average repetition rate: ${averageRepetitionRate}`);
 
-        expect(averageRepetitionRate).toBeLessThanOrEqual(0.0001);
+        expect(averageRepetitionRate).toBeLessThanOrEqual(0.00000001);
     });
 });
