@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = require('./lib/index.js');
+import { generateId, generateIdWithAffixes } from './lib/index.js';
+
+export { generateId as ssid, generateIdWithAffixes as ssidWithAffixes };

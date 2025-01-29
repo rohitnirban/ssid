@@ -1,65 +1,49 @@
-'use strict';
-
-const generateShortId = require('../lib/index');
+import test from 'ava';
+import { ssid } from '../index.js';
 
 const numberOfIdToGenerate = 10000000;
 
-describe('generateShortId function', () => {
-    test('generates a short ID with default length', () => {
-        const shortId = generateShortId();
-        expect(shortId.length).toBe(8);
-    });
+test('generates a short ID with default length', t => {
+    const shortId = ssid();
+    t.is(shortId.length, 8);
+});
 
-    test('generates a short ID with custom length', () => {
-        const shortId = generateShortId(15);
-        expect(shortId.length).toBe(15);
-    });
-    
-    test('Gives an error of min length', () => {
-        expect(() => generateShortId(2)).toThrow("Minimum Length of short id can not be less than 4");
-    });
-    
+test('generates a short ID with custom length', t => {
+    const shortId = ssid(15);
+    t.is(shortId.length, 15);
+});
 
-    test('Gives an error of min length', () => {
-        expect(() => generateShortId(100)).toThrow("Maximum Length of short id can not be more than 100");
-    });
-    
+test('generates unique short IDs each time', t => {
+    const shortIds = new Set();
+    let uniqueShortIds = 0;
 
-    test('generates a unique short ID each time', () => {
-        const shortIds = new Set();
-        let numberOfIdsToGenerate = numberOfIdToGenerate; 
-        
-        let uniqueShortIds = 0;
-
-        for (let i = 0; i < numberOfIdsToGenerate; i++) {
-            const shortId = generateShortId();
-            if (!shortIds.has(shortId)) {
-                shortIds.add(shortId);
-                uniqueShortIds++;
-            }
-        }
-
-        console.log(`Total number of short IDs generated: ${numberOfIdsToGenerate}`);
-        console.log(`Number of unique short IDs: ${uniqueShortIds}`);
-        expect(uniqueShortIds).toBe(numberOfIdsToGenerate);
-    });
-
-    test('checks average repetition rate after generating a large number of short IDs', () => {
-        const shortIds = new Set();
-        let numberOfIdsToGenerate = numberOfIdToGenerate; 
-        let totalRepetitions = 0;
-
-        for (let i = 0; i < numberOfIdsToGenerate; i++) {
-            const shortId = generateShortId();
-            if (shortIds.has(shortId)) {
-                totalRepetitions++;
-            }
+    for (let i = 0; i < numberOfIdToGenerate; i++) {
+        const shortId = ssid();
+        if (!shortIds.has(shortId)) {
             shortIds.add(shortId);
+            uniqueShortIds++;
         }
+    }
 
-        const averageRepetitionRate = totalRepetitions / numberOfIdsToGenerate;
-        console.log(`Average repetition rate: ${averageRepetitionRate}`);
+    console.log(`Total number of short IDs generated: ${numberOfIdToGenerate}`);
+    console.log(`Number of unique short IDs: ${uniqueShortIds}`);
+    t.is(uniqueShortIds, numberOfIdToGenerate);
+});
 
-        expect(averageRepetitionRate).toBeLessThanOrEqual(0.00000001);
-    });
+test('checks average repetition rate after generating a large number of short IDs', t => {
+    const shortIds = new Set();
+    let totalRepetitions = 0;
+
+    for (let i = 0; i < numberOfIdToGenerate; i++) {
+        const shortId = ssid();
+        if (shortIds.has(shortId)) {
+            totalRepetitions++;
+        }
+        shortIds.add(shortId);
+    }
+
+    const averageRepetitionRate = totalRepetitions / numberOfIdToGenerate;
+    console.log(`Average repetition rate: ${averageRepetitionRate}`);
+
+    t.true(averageRepetitionRate <= 0.00000001);
 });

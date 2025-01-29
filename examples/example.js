@@ -1,20 +1,31 @@
-const shortId = require('..');
-const isValid = require('../lib/valid');
+import { ssid } from '../index.js';
+import { ssidWithAffixes } from '../index.js';
 
-const testShortIds = (length, withSymbols) => {
-    let i = 10;
+const testShortIds = (length, alphabet) => {
+    let i = 1;
     while (i--) {
-        const shortID = shortId(length, withSymbols);
+        const shortID = ssid(length, alphabet);
         console.log(`Short ID: ${shortID}`);
-        console.log(`Valid: ${isValid(shortID, withSymbols) ? 'Yes' : 'No'}`);
-        console.log();
     }
 };
 
-// Test with symbols
-console.log('Testing with symbols:');
-testShortIds(18, true);
+const testShortIdWithAffix = (length, prefix, suffix) => {
+    let i = 1;
+    while (i--) {
+        const shortID = ssidWithAffixes(length, prefix, suffix);
+        console.log(`Short ID: ${shortID}`);
+    }
+};
 
-// Test without symbols
-console.log('Testing without symbols:');
-testShortIds(18, false);
+// Example 1
+console.log('Testing with defaults:');
+testShortIds();
+
+// Example 2
+console.log('Testing with custom length and alphabet:');
+testShortIds(18, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()');
+
+// Example 3
+console.log('Testing with custom length and alphabet:');
+testShortIdWithAffix(18, "ssid-", "2025");
+testShortIdWithAffix(11, "ssid-", "");
