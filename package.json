@@ -1,11 +1,14 @@
 {
   "name": "ssid",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Generate secure and unique short IDs in JavaScript, tested for reliability and compatibility with browsers",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "ava test/shortid.test.js",
+    "test:node": "ava test/node.test.js",
+    "test:next": "jest test/next.test.js",
+    "test:react": "jest test/react.test.js",
+    "test:all": "npm run test:node && npm run test:next && npm run test:react",
     "benchmark": "node test/benchmark.test.js"
   },
   "keywords": [
@@ -25,6 +28,8 @@
     "url": "git://github.com/rohitnirban/ssid.git"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "ava": "^6.2.0"
   },
   "dependencies": {
