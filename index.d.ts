@@ -11,7 +11,7 @@ export const DEFAULT_ALPHABET: string;
  * @param customAlphabet (optional) - A custom set of characters to use for generating the ID. Defaults to `DEFAULT_ALPHABET`.
  * @returns The generated ID as a string.
  */
-export function generateId(
+export function ssid(
     length?: number,
     customAlphabet?: string
 ): string;
@@ -27,7 +27,7 @@ export function generateId(
  * 
  * @throws Error - Throws an error if neither `prefix` nor `suffix` is provided.
  */
-export function generateIdWithAffixes(
+export function ssidWithAffixes(
     length?: number,
     prefix?: string,
     suffix?: string,
