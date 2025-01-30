@@ -14,13 +14,7 @@ SSID Generator is a Node.js module that provides a secure and efficient way to g
 
 ## Benchmark
 
-```javascript
-$ npm run benchmark
-secure-short-id x 4,121,845 ops/sec ±4.15% (73 runs sampled)
-nanoid x 4,571,419 ops/sec ±2.82% (79 runs sampled)
-uuid x 2,286,033 ops/sec ±4.45% (77 runs sampled)
-shortid x 263,682 ops/sec ±4.13% (75 runs sampled)
-```
+![Benchmark Graph](assets/benchmark.png)
 
 ## Installation
 
