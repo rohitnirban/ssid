@@ -61,7 +61,7 @@ console.log("Short ID:", shortId);
 
 | Parameter       | Type     | Default                  | Description                                                                 |
 |-----------------|----------|--------------------------|-----------------------------------------------------------------------------|
-| `length`        | Number   | `DEFAULT_LENGTH` (8)     | The length of the generated ID.                                             |
+| `length`        | Number   | `DEFAULT_LENGTH` (8)     | The length of the generated ID (prefix+suffix)                                             |
 | `prefix`        | String   |                          | A string to prepend to the generated ID. Either prefix or suffix must be provided. |
 | `suffix`        | String   |                          | A string to append to the generated ID. Either prefix or suffix must be provided.  |
 | `customAlphabet`| String   | `DEFAULT_ALPHABET`       | A custom set of characters to use for generating the ID.                    |
