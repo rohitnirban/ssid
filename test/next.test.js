@@ -14,7 +14,8 @@ describe('Next.js ssid package tests', () => {
   });
 
   test('should generate a unique short ID with prefix and suffix', () => {
-    const id = ssidWithAffixes(20, 'prefix-', '-suffix');
+    const customAlphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const id = ssidWithAffixes(20, 'prefix-', '-suffix', customAlphabet);
     expect(id).toMatch(/^prefix-[a-zA-Z0-9]{6}-suffix$/);
   });
 });
