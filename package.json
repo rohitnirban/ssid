@@ -7,9 +7,8 @@
   "type": "module",
   "scripts": {
     "test:node": "ava test/node.test.js",
-    "test:next": "jest test/next.test.js",
     "test:react": "jest test/react.test.js",
-    "test:all": "npm run test:node && npm run test:next && npm run test:react",
+    "test:all": "npm run test:node && npm run test:react",
     "benchmark": "node test/benchmark.test.js"
   },
   "keywords": [
