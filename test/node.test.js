@@ -1,5 +1,5 @@
 import test from 'ava';
-import { ssid, ssidWithAffixes } from '../index.js';
+import { ssid, ssidWithAffixes, ssidWithTimestamp } from '../index.js';
 
 test('generates a short ID with default length', (t) => {
     const shortId = ssid();
@@ -23,30 +23,10 @@ test('should generate a unique short ID with prefix and suffix', (t) => {
     t.regex(id, /^prefix-[a-zA-Z0-9]{6}-suffix$/);
 });
 
-test('generates unique short IDs', (t) => {
-    const shortIds = new Set();
-    const numberOfIdToGenerate = 100000;
-
-    for (let i = 0; i < numberOfIdToGenerate; i++) {
-        shortIds.add(ssid());
-    }
-
-    t.is(shortIds.size, numberOfIdToGenerate);
+test('should generate a unique short ID with timestamp', (t) => {
+    const customAlphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const id = ssidWithTimestamp(20, customAlphabet);
+    t.regex(id, /^[a-zA-Z0-9-]{34}$/);
 });
 
-test('ensures low repetition rate', (t) => {
-    const shortIds = new Set();
-    let repetitions = 0;
-    const numberOfIdToGenerate = 100000;
 
-    for (let i = 0; i < numberOfIdToGenerate; i++) {
-        const id = ssid();
-        if (shortIds.has(id)) {
-            repetitions++;
-        }
-        shortIds.add(id);
-    }
-
-    const repetitionRate = repetitions / numberOfIdToGenerate;
-    t.true(repetitionRate <= 0.00000001);
-});

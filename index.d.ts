@@ -10,6 +10,8 @@ export const DEFAULT_ALPHABET: string;
  * @param length (optional) - The length of the generated ID. Defaults to `DEFAULT_LENGTH` (8).
  * @param customAlphabet (optional) - A custom set of characters to use for generating the ID. Defaults to `DEFAULT_ALPHABET`.
  * @returns The generated ID as a string.
+ * 
+ * @throws Error - Throws an error if length is less than 4.
  */
 export function ssid(
     length?: number,
@@ -25,11 +27,26 @@ export function ssid(
  * @param customAlphabet (optional) - A custom set of characters to use for generating the ID. Defaults to `DEFAULT_ALPHABET`.
  * @returns The generated ID with affixes as a string.
  * 
+ * @throws Error - Throws an error if length is less than 4.
  * @throws Error - Throws an error if neither `prefix` nor `suffix` is provided.
  */
 export function ssidWithAffixes(
     length?: number,
     prefix?: string,
     suffix?: string,
+    customAlphabet?: string
+): string;
+
+/**
+ * Generates a unique ID with timestamp and a short id with specified length and custom alphabet.
+ * 
+ * @param length (optional) - The length of the generated ID. Defaults to `DEFAULT_LENGTH` (8).
+ * @param customAlphabet (optional) - A custom set of characters to use for generating the ID. Defaults to `DEFAULT_ALPHABET`.
+ * @returns The generated ID with timestamp and a short id as a string.
+ * 
+ * @throws Error - Throws an error if length is less than 4.
+ */
+export function ssidWithTimestamp(
+    length?: number,
     customAlphabet?: string
 ): string;

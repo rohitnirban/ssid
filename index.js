@@ -1,5 +1,5 @@
 'use strict';
 
-import { generateId, generateIdWithAffixes } from './lib/index.js';
+import { generateId, generateIdWithAffixes, generateIdWithTimestamp } from './lib/index.js';
 
-export { generateId as ssid, generateIdWithAffixes as ssidWithAffixes };
+export { generateId as ssid, generateIdWithAffixes as ssidWithAffixes, generateIdWithTimestamp as ssidWithTimestamp };

@@ -1,6 +1,5 @@
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { ssid, ssidWithAffixes } from '../index.js';
+import { ssid, ssidWithAffixes, ssidWithTimestamp } from '../index.js';
 
 describe('React ssid package tests', () => {
   test('should generate a unique short ID', () => {
@@ -18,5 +17,11 @@ describe('React ssid package tests', () => {
     const customAlphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     const id = ssidWithAffixes(20, 'prefix-', '-suffix', customAlphabet);
     expect(id).toMatch(/^prefix-[a-zA-Z0-9]{6}-suffix$/);
+  });
+
+  test('should generate a unique short ID with timestamp', () => {
+    const customAlphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const id = ssidWithTimestamp(20, customAlphabet);
+    expect(id).toMatch(/^[a-zA-Z0-9-]{34}$/);
   });
 });

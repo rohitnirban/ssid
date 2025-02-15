@@ -1,5 +1,4 @@
-import { ssid } from '../index.js';
-import { ssidWithAffixes } from '../index.js';
+import { ssid, ssidWithAffixes, ssidWithTimestamp } from '../index.js';
 
 const testShortIds = (length, alphabet) => {
     let i = 1;
@@ -17,6 +16,14 @@ const testShortIdWithAffix = (length, prefix, suffix) => {
     }
 };
 
+const testShortIdWithTimestamp = (length, alphabet) => {
+    let i = 1;
+    while (i--) {
+        const shortID = ssidWithTimestamp(length, alphabet);
+        console.log(`Short ID: ${shortID}`);
+    }
+};
+
 // Example 1
 console.log('Testing with defaults:');
 testShortIds();
@@ -29,3 +36,8 @@ testShortIds(18, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 console.log('Testing with custom length and alphabet:');
 testShortIdWithAffix(18, "ssid-", "2025");
 testShortIdWithAffix(11, "ssid-", "");
+
+// Example 4
+console.log('Testing with timestamp:');
+testShortIdWithTimestamp();
+testShortIdWithTimestamp(18, 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
