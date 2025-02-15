@@ -1,2 +1,14 @@
+.DS_Store
+*.log
+coverage
+dist
+.env
+.vscode
+*.tsbuildinfo
+*.swp
+
 node_modules
 idea
+test
+jest.config.js
+babel.config.js

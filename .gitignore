@@ -1,2 +1,13 @@
+.DS_Store
+.env
+dist
+coverage
+*.log
+*.tmp
+*.swp
+
 node_modules
 idea
+test
+jest.config.js
+babel.config.js
