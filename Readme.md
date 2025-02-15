@@ -8,6 +8,7 @@ SSID Generator is a Node.js module that provides a secure and efficient way to g
 - Customizable length for generated IDs.
 - Supports a wide range of characters, making IDs URL-friendly.
 - **Generate short IDs with prefix and suffix**
+- **Generate short IDs with timestamps**
 - Ensures uniqueness of generated IDs, even in high-demand scenarios.
 - Suitable for applications where security and uniqueness are critical.
 - Optionally includes or excludes symbols based on your requirements.
