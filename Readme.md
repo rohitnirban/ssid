@@ -34,8 +34,8 @@ const { ssid } = require("ssid");
 
 const shortId = ssid();
 
-console.log("Short ID", shortId);
-// Generate a short ID with default length (8 characters)
+console.log("Short ID : ", shortId);
+// Short ID : h7g6fb-n
 ```
 
 ### Advance Usage with affixes and timestamps
@@ -43,28 +43,31 @@ console.log("Short ID", shortId);
 ```javascript
 const { ssid, ssidWithAffixes, ssidWithTimestamp } = require("ssid");
 
-// Generate a short ID with default length (8 characters) with these custom alphabets
+
 const customAlphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
 const shortId = ssid(8, customAlphabet);
-console.log("Short ID:", shortId);
+console.log("Short ID : ", shortId);
+// Short ID : 9gHs8b1m 
 
-// Generate a short ID with a prefix, resulting in a total length of 11 characters
 const shortId = ssidWithAffixes(11, "ssid-");
-console.log("Short ID", shortId);
+console.log("Short ID : ", shortId);
+// Short ID : ssid-b7shdn
 
-// Generate a short ID with default length (8 characters) with affixes and with custom alphabet
 const customAlphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
 const shortId = ssidWithAffixes(8, "2025", "", customAlphabet);
-console.log("Short ID:", shortId);
+console.log("Short ID : ", shortId);
+// Short ID : 2025dh2n
 
-// Generate a short ID with timestamp, resulting in a total length of 11 characters
+
 const shortId = ssidWithTimestamp(11);
-console.log("Short ID", shortId);
+console.log("Short ID : ", shortId);
+// Short ID : 1738479600000-bsh89mH2VAO
 
 // Generate a short ID with a default length of 8 characters, including a timestamp. The total length will be 14 characters for the timestamp plus 8 characters for the short ID, resulting in 22 characters in total.  
 const customAlphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
 const shortId = ssidWithTimestamp(8, customAlphabet);
-console.log("Short ID:", shortId);
+console.log("Short ID : ", shortId);
+// Short ID : 1738490400000-8NbSm10H
 ```
 
 ## Parameters
