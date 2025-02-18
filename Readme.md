@@ -63,7 +63,6 @@ const shortId = ssidWithTimestamp(11);
 console.log("Short ID : ", shortId);
 // Short ID : 1738479600000-bsh89mH2VAO
 
-// Generate a short ID with a default length of 8 characters, including a timestamp. The total length will be 14 characters for the timestamp plus 8 characters for the short ID, resulting in 22 characters in total.  
 const customAlphabet = "abcdefghijklmnopqrstuvwxyz1234567890";
 const shortId = ssidWithTimestamp(8, customAlphabet);
 console.log("Short ID : ", shortId);
